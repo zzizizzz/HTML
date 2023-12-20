@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>폼 입력 양식 태그</h1>
+    <!--
+        <form> 태그
+            + 사용자가 입력한 데이터를 수집해서 웹서버로 제출할 때 사용하는 태그다.
+            + input, textarea, button, select, checkbox, radio button 등의
+              입렵 양식 태그를 포함할 수 있다.
+            + 주요속성
+                method
+                    수집한 입력데이터를 웹서버로 전달하는 방식을 지정한다.
+                    전달방식 GET/POST 가 있다.
+                action
+                    수집한 입력데이터가 전송될 URL을 지정한다.
+                    수집한 입력데이터를 처리하는 웹 애플리케이션의 URL을 지정한다.
+        주요 입력 양식 태그
+            <input type="text"/>
+                텍스트 입력필드를 추가한다
+            <input type="password" />
+                비밀번호 입력필드를 추가한다.
+            <input type="raid" />
+                여러 개 중에서 하나만 선택 할 수 있는 라디오 버튼을 추가한다.
+            <input type="checkbox" />
+                여러 개 중에서 복수 개 선택할수 잇는 체크박스를 추가한다.
+            <input type="file" />
+                첨부파일 업로드 필드를 추가한다.
+            <input type="date" />
+                날짜 입력필드를 추가한다.
+            <input type="detetime" />
+                날짜/시간 입력필드를 추가한다.
+            <input type="number" />
+                숫자 입력필드를 추가한다.
+            <input type="reset" />
+                입력폼을 초기화 버튼을 추가한다.
+            <input type="sumbit" />
+                폼 입력값을 서버로 제출하는 버튼을 추가한다.
+                이름 입력이 있어야 제출이된다. 이름이 없으면 수집자체를 수행하지 않는다.
+            <input type="hidden" />        
+                숨김 필드를 추가한다.
+
+            <select> 태그
+                콤보박스를 추가한다. 
+                콤보박스는 <option>태그를 포함한다.
+
+            <textarea> 태그
+                여러 줄의 텍스트를 입력 할 수 있는 입력필드를 추가한다.
+            
+            <button> 태그
+                버튼을 생성한다.
+
+
+    -->
+
+    <H2>입력폼 예</H2>
+    <form method="post" action="login.jsp">
+        <h3>텍스트 입력필드</h3>
+        <input type="text" name="id"/>
+        <input type="text" />
+
+        <h3>비밀번호 입력필드</h3>
+        <input type="password" />
+        <input type="password" name="pwd"/>
+
+
+        <h3>라디오 버튼</h3>
+        <input type="radio" name="gender" value="male" checked>남자
+        <input type="radio" name="gender" value="female" />여자<br/>
+    
+        <input type="radio" name="edu" value="고졸"/> 고졸
+        <input type="radio" name="edu" value="전문대졸"/> 전문대졸
+        <input type="radio" name="edu" value="대졸"checked/>대졸
+        <input type="radio" name="edu" value= /대학원졸/> 대학원졸
+
+        <h3>체크박스</h3>
+        <input type="checkbox" name="skils" value="java"> 자바
+        <input type="checkbox" name="skils" value="python"> 파이선
+        <input type="checkbox" name="skils" value="c"> c
+        <input type="checkbox" name="skils" value="c++"> c++
+        <input type="checkbox" name="skils" value="rust"> 러스트
+
+        <h3>날짜 필드</h3>
+        <input type="date" name="birth" />
+
+        <h3>시간 필드</h3>
+        <input type="time" name="ticketingTime"/>
+
+        <h3>날짜/시간 필드</h3>
+        <input type="datetime-local" name="birthdaytime" />
+
+        <h3>숫자 필드</h3>
+        <input type="number" name="amount" value="0" step="10" min="1" max="100"/>
+
+        <h3>범위 필드</h3>
+        <input type="range" name="points" min="0" max="100" step="5" value="35"/>
+
+        <h3>첨부파일 필드</h3>
+        <input type="file" name="myfile" />
+
+        <h3>숨긴 필드</h3>
+        <input type="hidden" name="userNo" value="12341234" />
+        <!--
+            숨긴필드는 페이지에 표시되지 않는다.
+            폼 입력값을 제출할 때 같이 서버로 제출된다.
+            눈에 보이지는 않지만 제출할때는 같이 제출이 된다.ex) 주민번호등등
+        -->
+
+        <h3>콤보박스</h3>
+        <select name="city">
+            <optgroup label="시">
+            <option value="1100">서울</option>
+            <option value="1200">인천</option>
+            <option value="1300">부산</option>
+            <option value="1400">광주</option>
+            <option value="1500">대구</option>
+            <option value="1600" selected>대전</option>
+        </optgroup>
+        <optgroup label="도">
+            <option value="1100">경기도</option>
+            <option value="1200">강원도</option>
+            <option value="1300">충청도</option>
+            <option value="1400">전라도</option>
+            <option value="1500">제주도</option>
+        </optgroup>
+        </select>
+
+        <h3>텍스트박스</h3>
+        <textarea name="memo" rows="10" cols= "100"></textarea>
+
+
+        <h3>리셋버튼과 제출버튼</h3>
+        <input type="reset" value="리셋버튼" />
+        <input type="submit" value="제출버튼" />
+    </form>
+</body>
+</html>
